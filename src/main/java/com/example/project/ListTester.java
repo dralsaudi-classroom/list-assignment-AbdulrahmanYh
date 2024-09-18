@@ -7,6 +7,7 @@ public class ListTester {
 			return;
 		int length = 1;
 		list.findFirst();
+	    if(list.last())return;
 		do {
 			length++;
 			list.findNext();
