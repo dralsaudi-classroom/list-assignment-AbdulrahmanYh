@@ -36,12 +36,14 @@ public class ListTester {
     {
        
         
+		if(l1.empty())return;
+		l1.findFirst();
 		while (!l1.last()) {
 			l1.findNext();
 		}
-		while (l1.retrieve()!=null) {
+		while (true) {
 			l2.insert(l1.retrieve());
-			if(l1.first())
+			if (l1.first())
 				break;
 			l1.findPrevious();
 
