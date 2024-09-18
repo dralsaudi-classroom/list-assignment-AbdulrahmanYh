@@ -4,28 +4,17 @@ public class ListTester {
     public static <T> void circularLeftShift(List <T> list, int n)
     {
        
-        
-		if(list.empty()|| n<=0)
+        if(list.empty()|| n<=0)
 			return;
-		
-		int length=1;
-		while(!list.last()) {
-			length++;
-		list.findNext();
-		}
-		n=n%length;
-		
 		while (n > 0) {
 			list.findFirst();
-			if(list.retrieve()==null)return ;
+			if(list.retrieve()==null)return;
 			T temp = list.retrieve();
 			list.remove();
-			list.findFirst();
 			while (!list.last())
 				list.findNext();
 			list.insert(temp);
 			n--;
-
 		}
 
 		}
