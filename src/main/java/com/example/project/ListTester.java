@@ -11,6 +11,7 @@ public class ListTester {
 			if(list.retrieve()==null)return;
 			T temp = list.retrieve();
 			list.remove();
+			list.findFirst();
 			while (!list.last())
 				list.findNext();
 			list.insert(temp);
