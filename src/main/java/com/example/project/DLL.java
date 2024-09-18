@@ -96,6 +96,7 @@ public class DLL<T> {
 		            current = current.next;
 		        }
 		    }
-	}
+	current=head;
+    }
     }
 
