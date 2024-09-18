@@ -65,40 +65,39 @@ public class DLL<T> {
             current = current.next;
     }
     public void removeBetween(T e1, T e2) {
-   public void removeBetween(T e1, T e2) {
-   
-    current = head;
-
-   
-    while (current != null && !current.data.equals(e1)) {
-        current = current.next;
-    }
-
-    if (current == null) return;
-
-    DLLNode<T> e1Node = current;
-    current = current.next;
     
-    while (current != null && !current.data.equals(e2)) {
-        current = current.next;
-    }
+		 current = head;
 
-    if (current == null || e1Node.next == current) return;
+		 
+		    while (current != null && !current.data.equals(e1)) {
+		        current = current.next;
+		    }
 
-    DLLNode<T> e2Node = current;
-    DLLNode<T> nodeToRemove = e1Node.next; 
+		
+		    if (current == null) return;
 
-    while (nodeToRemove != e2Node) {
-        DLLNode<T> nextNode = nodeToRemove.next;
-       
-        nodeToRemove.previous.next = nodeToRemove.next;
-        nodeToRemove.next.previous = nodeToRemove.previous;
-        nodeToRemove = nextNode; 
-    }
+		  
+		    DLLNode<T> e1Node = current;
+		    current = current.next;
+		    
+		    while (current != null && !current.data.equals(e2)) {
+		        current = current.next;
+		    }
 
-    current = head;
-}
+		    if (current == null || e1Node.next == current) return;
 
+		    DLLNode<T> e2Node = current;
+		    DLLNode<T> nodeToRemove = e1Node.next;
+
+		    while (nodeToRemove != e2Node) {
+		        DLLNode<T> nextNode = nodeToRemove.next; 
+		        nodeToRemove.previous.next = nodeToRemove.next;
+		        nodeToRemove.next.previous = nodeToRemove.previous;
+		        nodeToRemove = nextNode; 
+		    }
+
+		    
+		    current = head;
 	}
     }
 
