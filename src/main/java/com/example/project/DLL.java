@@ -66,7 +66,7 @@ public class DLL<T> {
     }
     public void removeBetween(T e1, T e2) {
         
-	    	ccurrent = head;
+	    	current = head;
 		while (current != null) {
 			if (current.data.equals(e1)) {
 				DLLNode<T> temp = current;
